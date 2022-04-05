@@ -6,11 +6,9 @@ import com.cron.libraryservice.member.service.dto.LibraryMemberDto;
 import com.cron.libraryservice.member.service.mapper.MemberMapper;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -45,12 +43,14 @@ public class LibraryMemberService implements LibraryMemberServiceI {
     }
 
     @Override
-    public void updateLibraryMember(LibraryMember libraryMember) {
+    public LibraryMemberDto updateLibraryMember(LibraryMemberDto libraryMemberDto) {
+        LibraryMember libraryMember = MemberMapper.INSTANCE.toEntity(libraryMemberDto);
 
+        return MemberMapper.INSTANCE.toDto(libraryMemberRepository.save(libraryMember));
     }
 
     @Override
     public void deleteLibraryMember(long id) {
-
+        libraryMemberRepository.deleteById(id);
     }
 }
