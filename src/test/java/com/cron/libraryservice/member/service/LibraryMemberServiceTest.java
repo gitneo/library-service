@@ -95,6 +95,7 @@ class LibraryMemberServiceTest {
 
 
     @Test
+    @DisplayName("Can users find all library members")
     public void canFindAllLibraryMembers(){
         //given nothing
         List<LibraryMember> libraryMemberList =  List.of(new LibraryMember(),new LibraryMember(),new LibraryMember());
@@ -110,5 +111,32 @@ class LibraryMemberServiceTest {
 
 
     @Test
-    public void canUpdateLibraryMember(){}
+    @DisplayName("Can users update library members")
+    public void canUpdateLibraryMember(){
+        //GIVEN updated libraryMember
+        LibraryMember libraryMember = MemberMapper.INSTANCE.toEntity(libraryMemberDto);
+        libraryMember.setEmail("ogookafor@hotmail.com");
+
+        //WHEN
+        Mockito.when(libraryMemberRepository.save(libraryMember)).thenReturn(libraryMember);
+        LibraryMemberDto updatedLibraryMemberDto = libraryMemberService.updateLibraryMember(libraryMemberDto);
+
+        //THEN
+        assertNotNull(updatedLibraryMemberDto);
+        assertTrue(libraryMember.getEmail().equalsIgnoreCase(updatedLibraryMemberDto.getEmail()));
+
+    }
+
+    @Test
+    @DisplayName("Can users delete library member")
+    public void canDeleteLibraryMember(){
+        //GIVEN
+        long id = 1;
+
+        //When
+        libraryMemberService.deleteLibraryMember(id);
+
+        //Then
+        Mockito.verify(libraryMemberRepository).deleteById(id);
+    }
 }

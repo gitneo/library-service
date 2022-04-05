@@ -10,6 +10,7 @@ public interface LibraryMemberServiceI {
     LibraryMemberDto createLibraryMember(LibraryMemberDto libraryMemberDto);
     LibraryMemberDto getLibraryMember(long id);
     List<LibraryMemberDto> getLibraryMembers();
-    void updateLibraryMember(LibraryMember libraryMember);
+    LibraryMemberDto updateLibraryMember(LibraryMemberDto libraryMemberDto);
+
     void deleteLibraryMember(long id);
 }
