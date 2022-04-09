@@ -1,11 +1,13 @@
 package com.cron.libraryservice.librarymember.model;
 
 import com.cron.libraryservice.librarian.model.Librarian;
+import com.cron.libraryservice.loan.model.Loan;
 import com.cron.libraryservice.util.Person;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Entity
@@ -37,4 +39,12 @@ public class LibraryMember extends Person {
 
     @Column(name = "MEM_EXPIRY_DATE", nullable = false)
     private LocalDate membershipExpiry;
+
+    @OneToMany(mappedBy = "member")
+    private List<Loan> loans;
+
+    public void addLoan(Loan loan){
+        loans.add(loan);
+        loan.setMember(this);
+    }
 }
