@@ -1,6 +1,5 @@
 package com.cron.libraryservice.book.model;
 
-import com.cron.libraryservice.order.model.Order;
 import com.cron.libraryservice.shelf.model.Shelf;
 import lombok.Data;
 
