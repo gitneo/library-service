@@ -1,7 +1,6 @@
 package com.cron.libraryservice.loan.model;
 
-import com.cron.libraryservice.book.model.Book;
-import com.cron.libraryservice.libraryitem.model.LoanItem;
+import com.cron.libraryservice.loanitem.model.LoanItem;
 import com.cron.libraryservice.librarian.model.Librarian;
 import com.cron.libraryservice.librarymember.model.LibraryMember;
 import lombok.Data;
@@ -39,6 +38,4 @@ public class Loan {
     @OneToMany(mappedBy = "loan")
     private List<LoanItem> items;
 
-    public void addBook(Book book){
-    }
 }
