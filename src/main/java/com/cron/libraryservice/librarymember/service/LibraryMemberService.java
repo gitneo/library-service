@@ -1,9 +1,9 @@
-package com.cron.libraryservice.member.service;
+package com.cron.libraryservice.librarymember.service;
 
-import com.cron.libraryservice.member.model.LibraryMember;
-import com.cron.libraryservice.member.repository.LibraryMemberRepository;
-import com.cron.libraryservice.member.service.dto.LibraryMemberDto;
-import com.cron.libraryservice.member.service.mapper.MemberMapper;
+import com.cron.libraryservice.librarymember.model.LibraryMember;
+import com.cron.libraryservice.librarymember.repository.LibraryMemberRepository;
+import com.cron.libraryservice.librarymember.service.dto.LibraryMemberDto;
+import com.cron.libraryservice.librarymember.service.mapper.MemberMapper;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

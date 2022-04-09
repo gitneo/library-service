@@ -1,17 +1,15 @@
-package com.cron.libraryservice.member.model;
+package com.cron.libraryservice.librarymember.model;
 
+import com.cron.libraryservice.librarian.model.Librarian;
 import com.cron.libraryservice.util.Person;
 import lombok.Data;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
 @Entity
-@Table(name = "LIB_MEMBER")
+@Table(name = "LIB_MEMBERS")
 
 @AttributeOverride(name = "id", column = @Column(name = "MEM_CODE", nullable = false))
 @AttributeOverride(name = "firstName", column = @Column(name = "MEM_FIRST_NAME", nullable = false))
@@ -24,15 +22,19 @@ import java.time.LocalDate;
 
 public class LibraryMember extends Person {
 
-    @Column(name = "MEM_ID")
+    @Column(name = "MEM_ID", nullable = false)
     private String libraryId;
 
-    @Column(name = "MEM_ACTIVE_STATUS")
+    @Column(name = "MEM_ACTIVE_STATUS", nullable = false)
     private Boolean isActive;
 
-    @Column(name = "MEM_CREATED_DATE")
+    @ManyToOne
+    @JoinColumn(name = "MEM_CREATED_BY", nullable = false)
+    private Librarian librarian;
+
+    @Column(name = "MEM_CREATED_DATE", nullable = false)
     private LocalDate membershipDate;
 
-    @Column(name = "MEM_EXPIRY_DATE")
+    @Column(name = "MEM_EXPIRY_DATE", nullable = false)
     private LocalDate membershipExpiry;
 }

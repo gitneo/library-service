@@ -1,6 +1,6 @@
-package com.cron.libraryservice.member.repository;
+package com.cron.libraryservice.librarymember.repository;
 
-import com.cron.libraryservice.member.model.LibraryMember;
+import com.cron.libraryservice.librarymember.model.LibraryMember;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

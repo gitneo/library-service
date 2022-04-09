@@ -1,7 +1,6 @@
-package com.cron.libraryservice.member.service;
+package com.cron.libraryservice.librarymember.service;
 
-import com.cron.libraryservice.member.model.LibraryMember;
-import com.cron.libraryservice.member.service.dto.LibraryMemberDto;
+import com.cron.libraryservice.librarymember.service.dto.LibraryMemberDto;
 
 import java.util.List;
 

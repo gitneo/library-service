@@ -1,7 +1,7 @@
-package com.cron.libraryservice.member.service.mapper;
+package com.cron.libraryservice.librarymember.service.mapper;
 
-import com.cron.libraryservice.member.model.LibraryMember;
-import com.cron.libraryservice.member.service.dto.LibraryMemberDto;
+import com.cron.libraryservice.librarymember.model.LibraryMember;
+import com.cron.libraryservice.librarymember.service.dto.LibraryMemberDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

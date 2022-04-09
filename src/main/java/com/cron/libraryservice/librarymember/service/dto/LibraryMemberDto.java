@@ -1,9 +1,7 @@
-package com.cron.libraryservice.member.service.dto;
+package com.cron.libraryservice.librarymember.service.dto;
 
 import com.cron.libraryservice.util.Gender;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
